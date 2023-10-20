@@ -13,7 +13,7 @@ android {
         minSdk 23
         targetSdk 33
         versionCode 1
-        versionName "1.0.3"
+        versionName "1.0.4"
 
 //        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -33,6 +33,19 @@ android {
     }
     buildFeatures.viewBinding = true
 
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                groupId = 'com.github.volythat'
+                artifactId = 'nwfeedback_android'
+                version = '1.0.4'
+            }
+        }
+    }
 }
 
 dependencies {
