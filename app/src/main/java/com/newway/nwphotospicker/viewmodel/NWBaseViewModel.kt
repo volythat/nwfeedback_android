@@ -1,0 +1,51 @@
+package com.newway.nwphotospicker.viewmodel
+
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
+
+open class NWBaseViewModel(application: Application) : AndroidViewModel(application)  {
+
+    private val viewModelJob = SupervisorJob()
+
+    private val exceptionHandler = CoroutineExceptionHandler { _, t ->
+        t.printStackTrace()
+    }
+
+    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob + exceptionHandler)
+
+    private val _lvError = MutableLiveData<Exception>()
+    open val lvError: LiveData<Exception>
+        get() = _lvError
+
+    fun launchDataLoad(block: suspend (scope: CoroutineScope) -> Unit): Job {
+        return uiScope.launch {
+            try {
+                block(this)
+            } catch (error: Exception) {
+                handleException(error)
+            } finally {
+            }
+        }
+    }
+
+    private fun handleException(error: Exception) {
+        error.printStackTrace()
+        if (error !is CancellationException) {
+            _lvError.value = error
+        }
+    }
+
+    public override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
+    }
+}
