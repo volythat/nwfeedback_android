@@ -69,8 +69,8 @@ class NWPhotosPickerFragment : BottomSheetDialogFragment() {
     private var isShowCamera : Boolean = true
     private var photoURI : Uri? = null
 
-    private var activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult? ->
-        result?.let {
+    private var launcher = registerForActivityResult(ActivityResultContracts.TakePicture()){
+        if (it){
             onPickPhotoDone()
         }
     }
@@ -215,17 +215,13 @@ class NWPhotosPickerFragment : BottomSheetDialogFragment() {
 
     fun openCamera() {
         context?.let { ctx ->
-            Log.e("TAG","id = ${ctx.packageName}")
             createImageFileInAppDir()?.let { file ->
-                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
                 photoURI = FileProvider.getUriForFile(
                     ctx,
                     "${ctx.packageName}.provider",
                     file
                 )
-                cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-                cameraIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
-                activityResultLauncher.launch(cameraIntent)
+                launcher.launch(photoURI)
             }
         }
     }
@@ -243,12 +239,10 @@ class NWPhotosPickerFragment : BottomSheetDialogFragment() {
     private fun onPickPhotoDone(){
         if (maxSelect == 1) {
             photoURI?.let {
-                if (File(it.path).exists()) {
-                        this@NWPhotosPickerFragment.dismiss()
-                        Handler(Looper.getMainLooper()).postDelayed({
-                            listener?.onDismissWithImages(listOf(it))
-                        }, 100)
-                }
+                this@NWPhotosPickerFragment.dismiss()
+                Handler(Looper.getMainLooper()).postDelayed({
+                    listener?.onDismissWithImages(listOf(it))
+                }, 100)
             }
         }
     }
