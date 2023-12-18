@@ -9,11 +9,10 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.newway.nwfeedback"
         minSdk 23
         targetSdk 34
         versionCode 1
-        versionName "1.0.5"
+        versionName "1.0.6"
 
 //        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,7 +44,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.github.volythat'
                 artifactId = 'nwfeedback_android'
-                version = '1.0.5'
+                version = '1.0.6'
             }
         }
     }
