@@ -1,4 +1,4 @@
-package com.newway.nwphotospicker.extension
+package com.newway.nwfeedback.nwphotospicker.extension
 
 import android.animation.ObjectAnimator
 import android.content.ContentResolver

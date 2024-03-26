@@ -1,4 +1,4 @@
-package com.newway.nwphotospicker.model
+package com.newway.nwfeedback.nwphotospicker.model
 
 import android.net.Uri
 import androidx.core.net.toFile

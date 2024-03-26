@@ -1,4 +1,4 @@
-package com.newway.nwphotospicker.adapter
+package com.newway.nwfeedback.nwphotospicker.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.newway.nwfeedback.R
 import com.newway.nwfeedback.databinding.ItemPhotoLayoutBinding
-import com.newway.nwphotospicker.extension.loadImage
-import com.newway.nwphotospicker.extension.singleClick
-import com.newway.nwphotospicker.model.NWMedia
+import com.newway.nwfeedback.nwphotospicker.extension.loadImage
+import com.newway.nwfeedback.nwphotospicker.extension.singleClick
+import com.newway.nwfeedback.nwphotospicker.model.NWMedia
 
 interface NWPhotosAdapterInterface {
     fun onClickCamera()
-    fun onClickPhoto(media:NWMedia)
+    fun onClickPhoto(media: NWMedia)
 }
 class NWPhotosAdapter : RecyclerView.Adapter<NWPhotosAdapter.PhotoViewHolder>(){
     var medias: List<NWMedia> = listOf()

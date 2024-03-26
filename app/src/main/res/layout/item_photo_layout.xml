@@ -22,7 +22,7 @@
             android:layout_height="match_parent"
             android:background="#80000000"
             android:visibility="gone" />
-        <com.newway.nwphotospicker.views.SmoothCheckBox
+        <com.newway.nwfeedback.nwphotospicker.views.SmoothCheckBox
             android:id="@+id/checkbox"
             style="@style/SmoothCheckBoxStyle"
             android:layout_width="wrap_content"

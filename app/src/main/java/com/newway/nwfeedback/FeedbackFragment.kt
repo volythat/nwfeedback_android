@@ -39,8 +39,8 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_EXPANDE
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.newway.nwfeedback.databinding.FragmentFeedbackBinding
-import com.newway.nwphotospicker.NWPhotosPickerDialogInterface
-import com.newway.nwphotospicker.NWPhotosPickerFragment
+import com.newway.nwfeedback.nwphotospicker.NWPhotosPickerDialogInterface
+import com.newway.nwfeedback.nwphotospicker.NWPhotosPickerFragment
 import zendesk.core.Zendesk
 import zendesk.support.Support
 import java.io.File

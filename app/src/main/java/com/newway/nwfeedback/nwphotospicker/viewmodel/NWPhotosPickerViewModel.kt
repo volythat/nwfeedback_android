@@ -1,4 +1,4 @@
-package com.newway.nwphotospicker.viewmodel
+package com.newway.nwfeedback.nwphotospicker.viewmodel
 
 import android.app.Application
 import android.content.ContentUris
@@ -13,9 +13,9 @@ import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.newway.nwphotospicker.extension.registerObserver
-import com.newway.nwphotospicker.model.NWMedia
-import com.newway.nwphotospicker.model.NWPhotoDirectory
+import com.newway.nwfeedback.nwphotospicker.extension.registerObserver
+import com.newway.nwfeedback.nwphotospicker.model.NWMedia
+import com.newway.nwfeedback.nwphotospicker.model.NWPhotoDirectory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

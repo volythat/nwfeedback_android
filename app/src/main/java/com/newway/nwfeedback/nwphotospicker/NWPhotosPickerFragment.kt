@@ -1,4 +1,4 @@
-package com.newway.nwphotospicker
+package com.newway.nwfeedback.nwphotospicker
 
 import android.R.attr.bitmap
 import android.app.Activity
@@ -29,15 +29,15 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.newway.nwfeedback.databinding.FragmentNwPhotosPickerBinding
-import com.newway.nwphotospicker.adapter.NWFolderAdapter
-import com.newway.nwphotospicker.adapter.NWFolderAdapterInterface
-import com.newway.nwphotospicker.adapter.NWPhotosAdapter
-import com.newway.nwphotospicker.adapter.NWPhotosAdapterInterface
-import com.newway.nwphotospicker.extension.rotateImage
-import com.newway.nwphotospicker.extension.singleClick
-import com.newway.nwphotospicker.model.NWMedia
-import com.newway.nwphotospicker.model.NWPhotoDirectory
-import com.newway.nwphotospicker.viewmodel.NWPhotosPickerViewModel
+import com.newway.nwfeedback.nwphotospicker.adapter.NWFolderAdapter
+import com.newway.nwfeedback.nwphotospicker.adapter.NWFolderAdapterInterface
+import com.newway.nwfeedback.nwphotospicker.adapter.NWPhotosAdapter
+import com.newway.nwfeedback.nwphotospicker.adapter.NWPhotosAdapterInterface
+import com.newway.nwfeedback.nwphotospicker.extension.rotateImage
+import com.newway.nwfeedback.nwphotospicker.extension.singleClick
+import com.newway.nwfeedback.nwphotospicker.model.NWMedia
+import com.newway.nwfeedback.nwphotospicker.model.NWPhotoDirectory
+import com.newway.nwfeedback.nwphotospicker.viewmodel.NWPhotosPickerViewModel
 import java.io.File
 import java.util.concurrent.TimeUnit
 

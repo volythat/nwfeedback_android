@@ -1,15 +1,15 @@
-package com.newway.nwphotospicker.adapter
+package com.newway.nwfeedback.nwphotospicker.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.newway.nwfeedback.databinding.ItemFolderLayoutBinding
-import com.newway.nwphotospicker.extension.loadImage
-import com.newway.nwphotospicker.extension.singleClick
-import com.newway.nwphotospicker.model.NWPhotoDirectory
+import com.newway.nwfeedback.nwphotospicker.extension.loadImage
+import com.newway.nwfeedback.nwphotospicker.extension.singleClick
+import com.newway.nwfeedback.nwphotospicker.model.NWPhotoDirectory
 
 interface NWFolderAdapterInterface {
-    fun onClickFolder(folder:NWPhotoDirectory)
+    fun onClickFolder(folder: NWPhotoDirectory)
 }
 
 class NWFolderAdapter : RecyclerView.Adapter<NWFolderAdapter.FolderViewHolder>(){

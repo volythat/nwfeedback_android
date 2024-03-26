@@ -1,4 +1,4 @@
-package com.newway.nwphotospicker.views
+package com.newway.nwfeedback.nwphotospicker.views
 
 import android.animation.ValueAnimator
 import android.annotation.TargetApi

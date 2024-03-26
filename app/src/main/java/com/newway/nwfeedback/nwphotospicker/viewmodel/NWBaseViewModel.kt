@@ -1,4 +1,4 @@
-package com.newway.nwphotospicker.viewmodel
+package com.newway.nwfeedback.nwphotospicker.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
